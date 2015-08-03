@@ -27,7 +27,8 @@ db = Database()
 # Database connections declaration
 # If you want global accessisble database, declare it here
 # It will automatically give you a connection from the connection pool
-db.test_app_db = db.add_engine(development.MYSQL_CONNECTION)
+db.test_app_db = db.add_engine(development.Db.get('mysql'))
+
 
 
 @mod_db_connection.teardown_app_request
